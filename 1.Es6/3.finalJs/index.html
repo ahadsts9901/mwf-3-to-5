@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -25,12 +26,89 @@
 
     <h1>JS Final</h1>
 
-    <input type="text" class="input">
-    <button onclick="showHide()">Password</button>
+    <input type="text" oninput="changeLocation(event)" class="input">
+    <button onclick="showWindow()" id="button"> <i class="bi bi-eye-slash-fill"></i> </button>
+
+    <button onclick="backward()" id="button"> <i class="bi bi-arrow-left"></i> </button>
+
+    <button onclick="forward()" id="button"> <i class="bi bi-arrow-right"></i> </button>
 
     <!-- <img src="./assets/banana.jfif" width="300" height="300" alt="" id="image"> -->
 
     <script>
+
+        function showWindow(){
+
+            var monkeyWindow = window.open();
+
+            var windowContent = `<h1>Capuchin monkey</h1><img src='./assets/haldi.jfif'><p>The word capuchin derives from a
+            group of friars<br>named the Order of Friars Minor Capuchin who wear<br>brown
+            robes with large hoods covering their heads.</p>`;
+
+            monkeyWindow.document.write(windowContent);
+
+        }
+
+        // function backward(){
+        //     history.go(-4);
+        // }
+        
+        // function forward(){
+        //     history.go(4);
+        // }
+
+        // function showHide(){
+        //     window.location.reload()
+        // }
+
+        // function changeLocation(event) {
+
+        //     if (event.target.value === "youtube") {
+
+        //         window.location.href = "https://youtube.com"
+
+        //     } else if (event.target.value === "facebook") {
+
+        //         window.location.href = "https://facebook.com"
+
+        //     }
+        // }
+
+        // function youtube(){
+        //     window.location.href = "https://youtube.com"
+        // }
+        // function facebook(){
+        //     window.location.href = "https://facebook.com"
+        // }
+
+        // var showPassword = false
+
+        // function showHide() {
+
+        //     showPassword = !showPassword
+
+        //     if (showPassword == true) {
+
+        //         let input = document.querySelector(".input")
+        //         input.setAttribute("type", "text")
+
+        //         let button = document.querySelector("#button")
+        //         button.innerHTML = `<i class="bi bi-eye-fill"></i>`
+
+        //         console.log(input.getAttribute("type"));
+
+        //     } else {
+
+        //         let input = document.querySelector(".input")
+        //         input.setAttribute("type", "password")
+        //         let button = document.querySelector("#button")
+        //         button.innerHTML = `<i class="bi bi-eye-slash-fill"></i>`
+
+        //         console.log(input.getAttribute("type"));
+
+        //     }
+
+        // }
 
         // lower case upper case methods
         // string length methods
