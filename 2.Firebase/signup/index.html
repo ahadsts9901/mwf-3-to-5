@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+
+    <form onsubmit="signup(event)">
+        <h1>Signup</h1>
+        <input type="email" placeholder="enter your email" id="emailSignup">
+        <input type="password" placeholder="enter your pasword" id="passwordSignup">
+        <button type="submit">Signup</button>
+    </form>
+
+
+    <!-- firebase from repo -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- authentication login signup from repo -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- javascript -->
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
