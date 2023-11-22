@@ -5,19 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./posts/main.css">
 </head>
 
 <body>
 
+    <h1>posts</h1>
 
-    <form onsubmit="signup(event)">
-        <h1>Signup</h1>
-        <input type="email" placeholder="enter your email" id="emailSignup">
-        <input type="password" placeholder="enter your pasword" id="passwordSignup">
-        <button type="submit">Signup</button>
-        <a href="../login/index.html">signin</a>
+    <form onsubmit="createPost(event)">
+        <input type="text" placeholder="enter title..." id="title">
+        <br>
+        <br>
+        <textarea placeholder="enter text" id="text"></textarea>
+        <br>
+        <br>
+        <button type="submit">post</button>
     </form>
+
+
+
+    <div class="result"></div>
+
 
     <!-- repo link -->
     <!-- https://github.com/ahadsts9901/firebase-pallete -->
@@ -27,7 +35,7 @@
     <!-- authentication login signup from repo -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <!-- javascript -->
-    <script src="./main.js"></script>
+    <script src="./posts/main.js"></script>
 
 </body>
 

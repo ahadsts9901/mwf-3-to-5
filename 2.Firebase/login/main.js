@@ -17,7 +17,7 @@ firebase.initializeApp(firebaseConfig);
 
 // signup function
 
-function signup(event) {
+function signin(event) {
 
     event.preventDefault()
 
@@ -26,17 +26,15 @@ function signup(event) {
 
     // from firebase
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
 
-            console.log("signup success full");
-            // window.location.href = "../index.html"
+            console.log("signin successful");
+            window.location.href = "../index.html"
 
         })
         .catch((error) => {
-
-            console.log("error : ", error);
-
+            console.log(error);
         });
 
     event.target.reset()
