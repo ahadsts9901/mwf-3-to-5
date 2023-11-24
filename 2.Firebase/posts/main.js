@@ -49,9 +49,9 @@ function readData() {
             querySnapshot.forEach((doc) => {
 
                 let data = doc.data()
-                console.log(data);
 
                 let post = document.createElement("div")
+                post.className += "post"
 
                 let title = document.createElement("h2")
                 title.innerText = data.title
@@ -61,6 +61,54 @@ function readData() {
                 text.innerText = data.text
                 post.appendChild(text)
 
+                let buttonCont = document.createElement("div")
+
+                let del = document.createElement("button")
+                del.innerText = "delete"
+                del.addEventListener("click", function () {
+
+                    db.collection("posts").doc(doc.id).delete().then(() => {
+
+                        console.log("Document successfully deleted!");
+
+                        window.location.reload()
+
+                    }).catch((error) => {
+                        console.error("Error removing document: ", error);
+                    });
+
+                })
+                buttonCont.appendChild(del)
+
+                let edit = document.createElement("button")
+                edit.innerText = "edit"
+                edit.addEventListener("click", function (event) {
+
+                    let newTitle = prompt("edit title", data.title)
+                    let newText = prompt("edit text", data.text)
+
+                    // from firebase
+
+                    return db.collection("posts").doc(doc.id).update({
+                        title: newTitle,
+                        text: newText
+                    })
+                        .then(() => {
+                            console.log("Document successfully updated!");
+                            window.location.reload()
+                        })
+                        .catch((error) => {
+                            // The document probably doesn't exist.
+                            console.error("Error updating document: ", error);
+                        });
+
+                })
+
+                // ==================================================
+
+                buttonCont.appendChild(edit)
+
+                post.appendChild(buttonCont)
                 container.appendChild(post)
 
             });
