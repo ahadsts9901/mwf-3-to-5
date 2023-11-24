@@ -30,7 +30,7 @@ function signup(event) {
         .then((userCredential) => {
 
             console.log("signup success full");
-            // window.location.href = "../index.html"
+            window.location.href = "../index.html"
 
         })
         .catch((error) => {

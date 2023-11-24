@@ -122,3 +122,25 @@ function readData() {
 window.addEventListener("load", function () {
     readData()
 })
+
+// logout
+
+function logout() {
+    firebase.auth().signOut().then(() => {
+        console.log("logout done");
+        window.location.href = "./login/index.html"
+      }).catch((error) => {
+        console.log(error);
+      });
+}
+
+// security
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      document.getElementById("userEmail").innerText = user.email
+    } else {
+      console.log("not logged in");
+      window.location.href = "./login/index.html"
+    }
+  });
